@@ -11,7 +11,7 @@
       "appName": "metronome-validator",
       "licenseKey": ""
     },
-    "gasPrice": 5000000000,
+    "gasPrice": 20000000000,
     "parpertrail": {
       "host": "logs.papertrailapp.com",
       "port": 31848

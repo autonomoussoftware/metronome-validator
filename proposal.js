@@ -19,7 +19,7 @@ async function init () {
     } else if (response.q1 === 'Propose to remove a validator') {
       action = 'remove'
     }
-    await proposals.createProposal(chain.contracts.Proposals, action, response.q2, process.env[chain.name + '_validator_address'])
+    await proposals.createProposal(chain.web3, chain.contracts.Proposals, action, response.q2, process.env[chain.name + '_validator_address'], process.env[chain.name + '_validator_password'])
   } else if (response.q2 === 'Vote for a proposal') {
     var proposalList = await proposals.viewProposals(chain.contracts.Proposals, chain.birthblock)
     var myVote = await inquirer.prompt(prepareQuesitonSet(proposalList))
@@ -28,7 +28,7 @@ async function init () {
     console.log(myVote.prop)
     response = await inquirer.prompt(questions.set5)
     myVote = JSON.parse(myVote.prop)
-    await proposals.voteForProposal(chain.contracts.Proposals, myVote.proposalId, process.env[chain.name + '_validator_address'], response.confirm)
+    await proposals.voteForProposal(chain.web3, chain.contracts.Proposals, myVote.proposalId, process.env[chain.name + '_validator_address'], response.confirm, process.env[chain.name + '_validator_password'])
   }
 }
 
