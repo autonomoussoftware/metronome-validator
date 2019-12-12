@@ -1,10 +1,10 @@
 {
     "eth": {
-      "confirmationCount": 5000,
+      "confirmationCount": 1400,
       "network": "mainnet"
     },
     "etc": {
-      "confirmationCount": 5000,
+      "confirmationCount": 1400,
       "network": "classic"
     },
     "newrelic": {
