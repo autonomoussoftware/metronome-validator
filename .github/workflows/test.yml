@@ -1,0 +1,18 @@
+on:
+  push:
+name: Test
+jobs:
+  test:
+    name: lint
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [8, 10]
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node }}
+    - run: npm install
+    - run: npm run test
