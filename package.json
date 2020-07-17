@@ -42,7 +42,7 @@
     "ethjs-abi": "^0.2.1",
     "inquirer": "^6.4.1",
     "lerna": "^3.8.5",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.19",
     "merkletreejs": "0.0.9",
     "metronome-contracts": "2.4.0",
     "metronome-parity-nodes": "1.0.2",
